@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lands2.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10,20,10,5">
+                <Label Text="Lands"
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="22"
+                FontAttributes="Bold"/>
+                
+                <Image Source="logo.png"
+                   WidthRequest="180"/>
+                
+                <Grid 
+                Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                    VerticalOptions="Center"
+                    Text="E-Mail"
+                    FontSize="Medium"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                    
+                    <Entry
+                    Keyboard="Email"
+                    Placeholder="Ingrese su email..."
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+                    
+                    <Label 
+                    VerticalOptions="Center"
+                    Text="Contraseña"
+                    FontSize="Medium"
+                    HorizontalOptions="Start" 
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+                    
+                    <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    IsPassword="True"
+                    Placeholder="Ingrese su contraseña..."/>
+                </Grid>
+                
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                    
+                    <Label
+                    Text="Recordarme en este dispositivo?"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"/>
+                    
+                    <Switch 
+                    HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+
+                <ActivityIndicator/>
+                
+                <StackLayout 
+                    Margin="40,0">
+                    
+                    <Button 
+                        HeightRequest="46"
+                        BackgroundColor="SkyBlue"
+                        BorderRadius="23"
+                        Text="Login"/>
+                    <Button 
+                        HeightRequest="46"
+                        BackgroundColor="SkyBlue"
+                        BorderRadius="23"
+                        Text="Login"/>  
+                </StackLayout>
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                    
+                    <Image Source="facebook_logo.png"
+                       WidthRequest="70"/>
+                    
+                    <Image Source="twitter_logo.png"
+                       WidthRequest="60"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
