@@ -46,7 +46,7 @@
                     Grid.Column="1"
                     IsPassword="True"
                     Placeholder="Ingrese su contraseña..."
-                    Text="{Binding PassWord, Mode=TwoWay}"/>
+                    Text="{Binding Password, Mode=TwoWay}"/>
                 </Grid>
                 
                 <ActivityIndicator 
@@ -86,14 +86,16 @@
                         BackgroundColor="SkyBlue"
                         BorderRadius="23"
                         Text="Registrarse"
-                        Command="{Binding Register}"/>
+                        Command="{Binding Register}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                     <Button 
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         BackgroundColor="SkyBlue"
                         BorderRadius="23"
                         Text="Login"
-                        Command="{Binding Login}"/>  
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>  
                 </StackLayout>
 
                 <StackLayout
