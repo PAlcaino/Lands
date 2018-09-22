@@ -1,6 +1,7 @@
 ﻿namespace Lands2.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Lands2.Views;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -15,7 +16,11 @@
         #endregion
 
         #region Propierties
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
+        }
 
         public string Password
         {
@@ -37,6 +42,7 @@
         #endregion
 
         #region Atributtes
+        private string email;
         private string password;
         private bool isEnabled;
         private bool isRunning;
@@ -47,6 +53,9 @@
         {
             this.IsRemembered = true;
             this.IsEnabled = true;
+
+            this.Email = "palcaino.lleite@gmail.com";
+            this.Password = "123456";
         }
         #endregion
 
@@ -78,13 +87,13 @@
                 return;
             }
 
-            this.IsEnabled = false;
-            this.IsRunning = true;
+            this.IsEnabled = true;
+            this.IsRunning = false;
 
             if(this.Email != "palcaino.lleite@gmail.com" || this.Password != "123456")
             {
-                this.IsEnabled = true;
-                this.IsRunning = false;
+                this.IsEnabled = false;
+                this.IsRunning = true;
 
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
@@ -99,6 +108,14 @@
                     "Login Correcto!",
                     "Aceptar");
 
+            this.IsEnabled = false;
+            this.IsRunning = true;
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
 
             return;
         }
