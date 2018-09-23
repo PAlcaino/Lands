@@ -4,7 +4,7 @@
              BackgroundColor="Silver"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="Lands2.Views.LandsPage"
-             Title="Lands2">
+             Title="Lands">
     <ContentPage.Content>
         <StackLayout 
             BindingContext="{Binding Lands}">
@@ -27,10 +27,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame
+                            <Frame                                
                                 Margin="5"
                                 CornerRadius="20"
                                 HasShadow="True">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
+                                </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>

@@ -30,7 +30,7 @@
         public string Region { get; set; }
 
         [JsonProperty(PropertyName = "subregion")]
-        public string SubRegion { get; set; }
+        public string Subregion { get; set; }
 
         [JsonProperty(PropertyName = "population")]
         public int Population { get; set; }
@@ -48,7 +48,7 @@
         public double? Gini { get; set; }
 
         [JsonProperty(PropertyName = "timezones")]
-        public List<string> TimeZones { get; set; }
+        public List<string> Timezones { get; set; }
 
         [JsonProperty(PropertyName = "borders")]
         public List<string> Borders { get; set; }

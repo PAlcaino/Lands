@@ -102,10 +102,14 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="EndAndExpand"
                     Orientation="Horizontal">
-                    
+
                     <Image Source="facebook_logo.png"
-                       WidthRequest="70"/>
-                    
+                       WidthRequest="70">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FacebookLogin}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+
                     <Image Source="twitter_logo.png"
                        WidthRequest="45"/>
                 </StackLayout>
