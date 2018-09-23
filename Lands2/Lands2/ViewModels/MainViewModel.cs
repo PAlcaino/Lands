@@ -15,6 +15,7 @@ namespace Lands2.ViewModels
         #region Constructors
         public MainViewModel()
         {
+            instance = this;
             this.Login = new LoginViewModel();
         }
         #endregion

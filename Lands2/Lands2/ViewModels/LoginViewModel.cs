@@ -70,7 +70,8 @@
 
         private async void Login()
         {
-            if(string.IsNullOrEmpty(Email))
+
+            if (string.IsNullOrEmpty(Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
@@ -103,13 +104,8 @@
                 return;
             }
 
-            await Application.Current.MainPage.DisplayAlert(
-                    "Ok",
-                    "Login Correcto!",
-                    "Aceptar");
-
-            this.IsEnabled = false;
-            this.IsRunning = true;
+            this.IsEnabled = true;
+            this.IsRunning = false;
 
             this.Email = string.Empty;
             this.Password = string.Empty;
