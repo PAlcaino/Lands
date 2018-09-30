@@ -23,7 +23,7 @@ namespace Lands2.Models
         public string Italian { get; set; }
 
         [JsonProperty(PropertyName = "br")]
-        public string Brasilian { get; set; }
+        public string Brazilian { get; set; }
 
         [JsonProperty(PropertyName = "pt")]
         public string Portuges { get; set; }
@@ -35,6 +35,6 @@ namespace Lands2.Models
         public string Croatian { get; set; }
 
         [JsonProperty(PropertyName = "fa")]
-        public string Danish { get; set; }
+        public string Persian { get; set; }
     }
 }

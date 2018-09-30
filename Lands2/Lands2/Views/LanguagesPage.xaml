@@ -6,10 +6,60 @@
              Title="Lenguajes"
              Icon="people.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="lenguajes"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            HorizontalOptions="Center"
+            BindingContext="{Binding Land}"
+            Padding="5">
+            <Label 
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Text="{Binding Land.Name}"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+             />
+
+            <ListView
+                HasUnevenRows="True"
+                ItemsSource="{Binding Languages}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="{Binding Iso6392}"
+                                        TextColor="Black">
+                                </Label>
+
+                                <Label   
+                                    Grid.Column="1"
+                                    Text="{Binding Name}"
+                                    TextColor="Black"
+                                    HorizontalOptions="Start">
+                                </Label>
+
+                                <Label   
+                                    Grid.Column="2"
+                                    Text="{Binding NativeName}"
+                                    TextColor="Black"
+                                    HorizontalOptions="Start">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
