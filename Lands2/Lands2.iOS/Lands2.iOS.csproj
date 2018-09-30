@@ -175,4 +175,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\chev.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\borders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\translation.png" />
+  </ItemGroup>
 </Project>

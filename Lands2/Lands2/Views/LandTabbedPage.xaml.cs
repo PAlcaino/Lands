@@ -1,12 +1,14 @@
-﻿namespace Lands2.Views
+﻿
+namespace Lands2.Views
 {
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;
 
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LandPage : ContentPage
+	public partial class LandTabbedPage : TabbedPage
 	{
-		public LandPage ()
+		public LandTabbedPage ()
 		{
 			InitializeComponent ();
 		}
