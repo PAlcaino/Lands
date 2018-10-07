@@ -15,6 +15,7 @@
         #region Services
         private APIServices apiService;
         #endregion
+
         #region Events
 
         #endregion
@@ -107,6 +108,8 @@
                     "Error",
                     connection.Message,
                     "Aceptar");
+                this.IsEnabled = true;
+                this.IsRunning = false;
                 return;
             }
 
@@ -121,6 +124,8 @@
                     "Error",
                     "Algo ha ocurrido con su peticion, intente nuevamente",
                     "Aceptar");
+                this.IsEnabled = true;
+                this.IsRunning = false;
                 return;
             }
 
@@ -131,6 +136,8 @@
                     token.ErrorDescription,
                     "Aceptar");
                 this.Password = string.Empty;
+                this.IsEnabled = true;
+                this.IsRunning = false;
                 return;
             }
 
@@ -139,8 +146,8 @@
             mainViewModel.Lands = new LandsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
 
-            this.IsEnabled = false;
-            this.IsRunning = true;
+            this.IsEnabled = true;
+            this.IsRunning = false;
 
             this.Email = string.Empty;
             this.Password = string.Empty;
