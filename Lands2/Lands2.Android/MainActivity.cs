@@ -16,7 +16,7 @@ namespace Lands2.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            CachedImageRenderer.Init(true);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             LoadApplication(new App());
         }
     }

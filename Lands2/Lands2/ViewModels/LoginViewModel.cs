@@ -1,6 +1,7 @@
 ﻿namespace Lands2.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Lands2.Helpers;
     using Lands2.Services;
     using Lands2.Views;
     using System;
@@ -80,17 +81,17 @@
             if (string.IsNullOrEmpty(Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Debe ingresar un email",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.EmailValidation,
+                    Languages.Accept);
                 return;
             }
             if (string.IsNullOrEmpty(Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Debe ingresar una contraseña",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.PasswordValidation,
+                    Languages.Accept);
                 return;
             }
 
@@ -105,9 +106,9 @@
                 this.IsRunning = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Aceptar");
+                    Languages.Accept);
                 this.IsEnabled = true;
                 this.IsRunning = false;
                 return;
@@ -121,9 +122,9 @@
             if(token == null)
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Algo ha ocurrido con su peticion, intente nuevamente",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.SomethingWrong,
+                    Languages.Accept);
                 this.IsEnabled = true;
                 this.IsRunning = false;
                 return;
@@ -132,9 +133,9 @@
             if(string.IsNullOrEmpty(token.AccessToken))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     token.ErrorDescription,
-                    "Aceptar");
+                    Languages.Accept);
                 this.Password = string.Empty;
                 this.IsEnabled = true;
                 this.IsRunning = false;
