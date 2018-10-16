@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands2.Views.LoginPage"
+             xmlns:i18n="clr-namespace:Lands2.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login">
+             Title="{i18n:Translate Login}">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
@@ -21,21 +22,21 @@
 
                     <Label 
                     VerticalOptions="Center"
-                    Text="E-Mail"
+                    Text="{i18n:Translate EMail}"
                     FontSize="Medium"
                     Grid.Row="0"
                     Grid.Column="0"/>
                     
                     <Entry
                     Keyboard="Email"
-                    Placeholder="Ingrese su email..."
+                    Placeholder="{i18n:Translate EmailPlaceHolder}"
                     Grid.Column="1"
                     Grid.Row="0"
                     Text="{Binding Email, Mode=TwoWay}"/>
                     
                     <Label 
                     VerticalOptions="Center"
-                    Text="Contraseña"
+                    Text="{i18n:Translate Password}"
                     FontSize="Medium"
                     HorizontalOptions="Start" 
                     Grid.Row="1"
@@ -45,7 +46,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     IsPassword="True"
-                    Placeholder="Ingrese su contraseña..."
+                    Placeholder="{i18n:Translate PasswordPlaceHolder}"
                     Text="{Binding Password, Mode=TwoWay}"/>
                 </Grid>
                 
@@ -59,7 +60,7 @@
                     VerticalOptions="CenterAndExpand">
                     
                     <Label
-                    Text="Recordarme en este dispositivo?"
+                    Text="{i18n:Translate Rememberme}"
                     VerticalOptions="Center"
                     HorizontalOptions="Start"/>
                     
@@ -70,7 +71,7 @@
                 </StackLayout>
                 
                 <Label 
-                        Text="Ha olvidado su contraseña?"
+                        Text="{i18n:Translate Forgot}"
                         TextColor="SkyBlue"
                         HorizontalOptions="CenterAndExpand"
                         VerticalOptions="CenterAndExpand"/>
@@ -85,7 +86,7 @@
                         HorizontalOptions="FillAndExpand"
                         BackgroundColor="SkyBlue"
                         BorderRadius="23"
-                        Text="Registrarse"
+                        Text="{i18n:Translate Register}"
                         Command="{Binding Register}"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                     <Button 
@@ -93,7 +94,7 @@
                         HorizontalOptions="FillAndExpand"
                         BackgroundColor="SkyBlue"
                         BorderRadius="23"
-                        Text="Login"
+                        Text="{i18n:Translate Login}"
                         Command="{Binding LoginCommand}"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>  
                 </StackLayout>

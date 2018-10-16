@@ -1,6 +1,7 @@
 ﻿namespace Lands2.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using Lands2.Helpers;
     using Lands2.Services;
     using Lands2.Views;
     using System;
@@ -80,17 +81,17 @@
             if (string.IsNullOrEmpty(Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Debe ingresar un email",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.EmailValidation,
+                    Languages.Accept);
                 return;
             }
             if (string.IsNullOrEmpty(Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Debe ingresar una contraseña",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.PasswordValidation,
+                    Languages.Accept);
                 return;
             }
 
