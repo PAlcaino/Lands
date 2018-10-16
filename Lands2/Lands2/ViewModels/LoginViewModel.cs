@@ -133,9 +133,9 @@
             if(string.IsNullOrEmpty(token.AccessToken))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     token.ErrorDescription,
-                    "Aceptar");
+                    Languages.Accept);
                 this.Password = string.Empty;
                 this.IsEnabled = true;
                 this.IsRunning = false;
