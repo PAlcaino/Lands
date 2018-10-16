@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands2.Views.BordersPage"
+             xmlns:i18n="clr-namespace:Lands2.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Fronteras"
+             Title="{i18n:Translate Borders}"
              Icon="borders.png">
     <ContentPage.Content>
         <StackLayout

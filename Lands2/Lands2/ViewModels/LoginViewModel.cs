@@ -106,9 +106,9 @@
                 this.IsRunning = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Aceptar");
+                    Languages.Accept);
                 this.IsEnabled = true;
                 this.IsRunning = false;
                 return;
@@ -122,9 +122,9 @@
             if(token == null)
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Algo ha ocurrido con su peticion, intente nuevamente",
-                    "Aceptar");
+                    Languages.Error,
+                    Languages.SomethingWrong,
+                    Languages.Accept);
                 this.IsEnabled = true;
                 this.IsRunning = false;
                 return;

@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Lands2.Helpers"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              BackgroundColor="Silver"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              x:Class="Lands2.Views.LandsPage"
-             Title="Lands">
+             Title="{i18n:Translate Countries}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
@@ -19,7 +20,7 @@
             <SearchBar               
                 BackgroundColor="White"
                 Text="{Binding Filter, Mode=TwoWay}"
-                Placeholder="Buscar..."
+                Placeholder="{i18n:Translate Search}"
                 SearchCommand="{Binding SearchCommand}"
                 HeightRequest="50"
                 >
